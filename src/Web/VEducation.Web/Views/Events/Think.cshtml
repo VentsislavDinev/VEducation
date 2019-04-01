@@ -1,0 +1,10 @@
+﻿@model VEducation.Data.ViewModels.Pages.EventPageViewModel
+
+<div class="banner-info-w3pvt">
+    @foreach (var item in Model.Think)
+    {
+        <h3>@item.Title</h3>
+        <p class="my-4">@item.Description</p>
+    }
+
+</div>

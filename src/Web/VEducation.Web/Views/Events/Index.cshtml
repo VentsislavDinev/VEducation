@@ -1,0 +1,30 @@
+﻿@model VEducation.Data.ViewModels.Pages.EventPageViewModel
+
+<!---->
+<!--// mian-content -->
+<!-- banner -->
+<section class="ab-info-main py-md-5 py-4">
+    <div class="container py-md-5 py-4">
+        <h3 class="tittle text-center mb-lg-5 mb-3"><span class="sub-tittle">Latest</span> News & Events</h3>
+        <div class="row mt-lg-5 mt-4">
+            @for (var i = 0; i < Model.GetAllCourses.Count(); i++)
+            {
+                var service = Model.GetAllCourses.ElementAt(i);
+
+                <div class="col-md-6 events-img">
+                    <a href="/events/getByid/@service.Id"><img src="images/@service.Image" class="img-fluid" alt="user-image" /></a>
+                </div>
+                <div class="col-md-6 events-info">
+                    
+                    <h4 class="my-3"><a href="/events/getByid/@service.Id" class="text-dark">@service.Title</a></h4>
+                    <p>@service.ShortContent</p>
+                    <ul class="events-icons new-inf mt-md-4 mt-3 d-flex">
+                        <li><a href="#"><span class="fa fa-calendar"></span></a>@service.CreationTime</li>
+                    </ul>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</section>

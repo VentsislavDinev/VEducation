@@ -1,0 +1,15 @@
+﻿@model VEducation.Data.ViewModels.Pages.HomePageViewModel
+
+@using (Html.BeginForm("Message", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.EditorFor(model => model.CompanyMessage.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "First name" } })
+    @Html.EditorFor(model => model.CompanyMessage.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Last name" } })
+    @Html.EditorFor(model => model.CompanyMessage.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
+    @Html.EditorFor(model => model.CompanyMessage.Phone, new { htmlAttributes = new { @class = "form-control", placeholder = "phone" } })
+    @Html.EditorFor(model => model.CompanyMessage.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "title" } })
+    @Html.EditorFor(model => model.CompanyMessage.Description, new { htmlAttributes = new { @class = "form-control", placeholder="description" } })
+    <div class="read mt-3">
+        <button type="submit" class="btn submit">Submit</button>
+    </div>
+}

@@ -1,0 +1,25 @@
+﻿ <!--// mian-content -->
+@model VEducation.Data.ViewModels.Pages.HomePageViewModel
+<!---->
+<!--// mian-content -->
+<!-- /hand-crafted -->
+<section class="hand-crafted bg-light py-5">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="row banner-grids">
+            <div class="col-md-6 banner-image">
+                <div class="effect-w3">
+                    <img src="/images/img.jpg" alt="" class="img-fluid image1">
+
+                </div>
+
+            </div>
+            @foreach (var item in Model.About)
+            {
+                <div class="col-md-6 last-img pl-lg-5 p-3">
+                    <h3 class="tittle my-lg-5 my-3">@item.Name</h3>
+                    <p class="mb-4"> @item.Description</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>

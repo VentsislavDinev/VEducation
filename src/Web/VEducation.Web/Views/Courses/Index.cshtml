@@ -1,0 +1,47 @@
+﻿@model VEducation.Data.ViewModels.Pages.CoursePageViewModel
+
+<!--// mian-content -->
+<!-- banner -->
+<section class="ab-info-main py-md-5 py-4">
+    <div class="container">
+        <div class="ab-info-grids pt-md-5 pt-3">
+            <h3 class="tittle text-center mb-lg-5 mb-3"><span class="sub-tittle">Latest</span>Available Courses</h3>
+            <div id="products" class="row view-group">
+                <div class="item col-lg-4">
+                    @for (var i = 0; i < Model.GetAllCourses.Count(); i++)
+                    {
+                        var service = Model.GetAllCourses.ElementAt(i);
+
+                        <div class="thumbnail card">
+                            <div class="img-event">
+                                <img class="group list-group-image img-fluid" src="images/@service.Image" alt="" />
+                            </div>
+                            <div class="caption card-body">
+                                <h4 class="group card-title inner list-group-item-heading">
+                                    @service.Title
+                                </h4>
+                                <p class="group inner list-group-item-text">
+                                    @service.ShortContent
+                                    <div class="row">
+                                        <div class="col-6">
+                                <p class="lead">
+                                    $20.00
+                                </p>
+                            </div>
+                            <div class="col-6 ban-buttons">
+                                <a class="btn btn-course" href="/courses/getByid/@service.Id">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                if (i > 0 && (i + 1) % 3 == 0)
+                {
+                @:</div>
+                @:<div class="item col-lg-4">
+                }
+            }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
